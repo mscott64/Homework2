@@ -96,7 +96,17 @@ public class CashBox extends JFrame {
                 } else {
                     // Append this text to the existing screen text.
                     String screenText = screen.getText();
-                    screen.setText(screenText.concat(text));
+                    switch(text) {
+                        case Constants.DECIMAL_POINT:
+                            // Don't add another decimal point if there's already one.
+                            if (!screenText.contains(Constants.DECIMAL_POINT)) {
+                                screen.setText(screenText.concat(Constants.DECIMAL_POINT));
+                            }
+                            break;
+                        default:
+                            screen.setText(screenText.concat(text));
+                            break;
+                    }
                 }
             }
         });
@@ -156,6 +166,8 @@ public class CashBox extends JFrame {
                     case Constants.CLEAR: // Clear the screen to its original value
                         isScreenCleared = true;
                         screen.setText(Constants.START_SCREEN);
+                        break;
+                    case Constants.ADD:
                         break;
                     default: // do nothing
                         break;
