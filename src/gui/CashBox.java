@@ -71,7 +71,6 @@ public class CashBox extends JFrame {
     /**
      * Creates a number button that appends it's value to the screen
      * when pressed.
-     * You shouldn't need to make any changes to this method.
      */
     private JButton createNumberButton(final String text) {
         JButton button = createButtonWithFont(text);
