@@ -63,7 +63,7 @@ public class CashRegister {
 
         // Update the register total with the amount given in change.
         total -= amountOwed;
-        paymentAmount = 0.0;
+        purchaseAmount = 0.0;
         paymentAmount = 0.0;
         return amountOwed;
     }
